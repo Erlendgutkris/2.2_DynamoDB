@@ -10,7 +10,7 @@ router.get("/", async function(req, res, next){
   res.send(list);
 });
 
-router.get("/", async function(req, res, next){
+router.get("/:key", async function(req, res, next){
   let item = await users.get(req.params.key);
   res.send(item);
 })
