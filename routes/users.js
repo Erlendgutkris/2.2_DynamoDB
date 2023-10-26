@@ -10,6 +10,11 @@ router.get("/", async function(req, res, next){
   res.send(list);
 });
 
+router.get("/", async function(req, res, next){
+  let item = await users.get(req.params.key);
+  res.send(item);
+})
+
 router.post("/", async function(req, res, next){
   const {email, firstName, lastName, age} = req.body;
   await users.set(email, {
